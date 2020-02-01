@@ -1,6 +1,7 @@
+const cp = require("child_process");
+
 post("/command", (req, res) => {
 
-	console.log("Command", req.body);
-	res.end();
+	res.send(cp.execSync(req.body.command));
 
 });
